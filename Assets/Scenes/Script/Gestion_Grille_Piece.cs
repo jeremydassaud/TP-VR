@@ -3,7 +3,7 @@ using UnityEngine;
 public class Gestion_Grille_Piece : MonoBehaviour
 {
     public GameObject objet; // L'objet à rendre invisible
-    public bool AsPiece = true; // La variable qui détermine la visibilité
+    public bool AsPiece; // La variable qui détermine la visibilité
 
     void Update()
     {

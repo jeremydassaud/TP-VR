@@ -3,7 +3,7 @@ using UnityEngine;
 public class Gestion_Grille_Coffre : MonoBehaviour
 {
     public GameObject objet; // L'objet à rendre invisible
-    public bool AsCoffre = true; // La variable qui détermine la visibilité
+    public bool AsCoffre; // La variable qui détermine la visibilité
 
     void Update()
     {
