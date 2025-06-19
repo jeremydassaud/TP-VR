@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class sgMonsterPatrol : MonoBehaviour
+public class MonsterPatrol : MonoBehaviour
 {
     public Transform[] patrolPoints;
     private NavMeshAgent agent;
@@ -21,7 +21,7 @@ public class sgMonsterPatrol : MonoBehaviour
         }
     }
 
-    void ChooseNextPoint()
+    public void ChooseNextPoint()
     {
         if (patrolPoints.Length == 0) return;
         currentTarget = patrolPoints[Random.Range(0, patrolPoints.Length)];
