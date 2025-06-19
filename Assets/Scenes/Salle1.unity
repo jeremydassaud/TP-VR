@@ -8498,7 +8498,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -16611,7 +16611,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 8676487198687803218}
   destination: {fileID: 887107533}
-  playerg: {fileID: 0}
+  playerg: {fileID: 8676487198687803217}
 --- !u!1 &1344079355
 GameObject:
   m_ObjectHideFlags: 0
@@ -17674,7 +17674,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
