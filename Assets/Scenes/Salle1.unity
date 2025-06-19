@@ -421,8 +421,8 @@ GameObject:
   - component: {fileID: 29139457}
   - component: {fileID: 29139456}
   - component: {fileID: 29139455}
-  - component: {fileID: 29139459}
   - component: {fileID: 29139458}
+  - component: {fileID: 29139459}
   m_Layer: 0
   m_Name: Coin.001
   m_TagString: Untagged
@@ -528,16 +528,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 29139454}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50dcca62ea51b1c4d83bae657f599749, type: 3}
+  m_Script: {fileID: 11500000, guid: 0cc019f228f5a1d43b95383f63d3c298, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinID: MainCoin
-  requiresInteraction: 1
-  interactionKey: 101
-  interactionDistance: 2
-  collectEffect: {fileID: 0}
-  collectSound: {fileID: 0}
-  interactionPrompt: {fileID: 0}
 --- !u!1 &30108076
 GameObject:
   m_ObjectHideFlags: 0
