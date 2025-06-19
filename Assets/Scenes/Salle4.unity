@@ -12410,7 +12410,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdf1288bd33566947bd3afa94dd32319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objet: {fileID: 0}
+  objet: {fileID: 1238087144}
   AsCoffre: 0
 --- !u!65 &1238087146
 BoxCollider:
@@ -15971,7 +15971,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92d429212e257a944817f7c00258bdaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objet: {fileID: 0}
+  objet: {fileID: 1606646025}
   AsOssement: 0
 --- !u!65 &1606646031
 BoxCollider:
@@ -17128,7 +17128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c167a3677b8ef1468b4ad176d97f12a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objet: {fileID: 0}
+  objet: {fileID: 1734245730}
   AsPiece: 0
 --- !u!23 &1734245733
 MeshRenderer:
