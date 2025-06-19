@@ -1,23 +1,38 @@
 using UnityEngine;
 
-public class CoinCollectible : MonoBehaviour
+public class GrabHandler : MonoBehaviour
 {
-    private bool coinCollected = false;
+    [Header("Configuration")]
+    public bool isCollected = false;
 
-    void OnTriggerEnter(Collider other)
+    // Fonction publique que tu peux appeler depuis l'événement Unity
+    public void OnObjectGrabbed()
     {
-        if(other.CompareTag("Player") && !coinCollected)
-        {
-            if(Input.GetButtonDown("Grip")) // Assurez-vous de remplacer "Fire1" par le nom de l'axe de gâchette de votre manette
-            {
-                coinCollected = true;
-                gameObject.SetActive(false); // Faites disparaître la pièce de monnaie
-            }
-        }
+        Debug.Log("Objet collecté via UnityEvent !");
+
+        // Passe la variable à true
+        isCollected = true;
+
+        // Faire disparaître l'objet
+        gameObject.SetActive(false);
     }
 
-    public bool IsCoinCollected()
+    // Autres fonctions utiles que tu peux utiliser
+    public void DestroyObject()
     {
-        return coinCollected;
+        Destroy(gameObject);
+    }
+
+    public void SetVariableTrue()
+    {
+        isCollected = true;
+        Debug.Log("Variable passée à true !");
+    }
+
+    public void PlaySound()
+    {
+        AudioSource audio = GetComponent<AudioSource>();
+        if(audio != null)
+            audio.Play();
     }
 }
