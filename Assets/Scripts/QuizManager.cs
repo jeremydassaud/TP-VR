@@ -8,6 +8,14 @@ public class QuizManager : MonoBehaviour
     public GameObject questionObject;
     public GameObject answer1Object;
     public GameObject answer2Object;
+    public Button answer1Button;
+    public Button answer2Button;
+
+    [Header("Teleportation")]
+    public Transform playerTransform;
+    public Transform nextQuizRoomPosition;
+    public Transform thisQuizWrongAnswerRoomPosition;
+    public float teleportDelay = 2f;
 
     private Text questionText;
     private Text answer1Text;
@@ -16,8 +24,6 @@ public class QuizManager : MonoBehaviour
     private TextMeshProUGUI questionTextTMP;
     private TextMeshProUGUI answer1TextTMP;
     private TextMeshProUGUI answer2TextTMP;
-    public Button answer1Button;
-    public Button answer2Button;
 
     [Header("Quiz Data")]
     public string question = "Quelle est la capitale de la France ?";
@@ -77,35 +83,97 @@ public class QuizManager : MonoBehaviour
 
     void SetupButtons()
     {
-        answer1Button.onClick.AddListener(() => OnAnswerSelected(1));
-        answer2Button.onClick.AddListener(() => OnAnswerSelected(2));
+        if (answer1Button != null)
+            answer1Button.onClick.AddListener(() => OnAnswerSelected(1));
+        if (answer2Button != null)
+            answer2Button.onClick.AddListener(() => OnAnswerSelected(2));
     }
 
     public void OnAnswerSelected(int answerNumber)
     {
         bool isCorrect = false;
+        string selectedAnswer = "";
 
         if (answerNumber == 1)
         {
             isCorrect = answer1IsCorrect;
+            selectedAnswer = answer1;
         }
         else if (answerNumber == 2)
         {
-            isCorrect = !answer1IsCorrect;
+            isCorrect = answer2IsCorrect;
+            selectedAnswer = answer2;
         }
 
+        Debug.Log($"=== QUIZ DEBUG ===");
+        Debug.Log($"Question: {question}");
+        Debug.Log($"Réponse sélectionnée: {selectedAnswer} (numéro {answerNumber})");
+        Debug.Log($"Answer1IsCorrect = {answer1IsCorrect}");
+        Debug.Log($"Answer2IsCorrect = {answer2IsCorrect}");
+        Debug.Log($"Résultat: {(isCorrect ? "VRAI" : "FAUX")}");
+        Debug.Log($"==================");
+
         Debug.Log(isCorrect ? "VRAI - Bonne réponse !" : "FAUX - Mauvaise réponse !");
+
+        DisableButtons();
+
+        if (isCorrect)
+        {
+            StartCoroutine(TeleportToNextRoom());
+        }
+        else
+        {
+            StartCoroutine(TeleportToWrongAnswerRoom());
+        }
+    }
+
+    System.Collections.IEnumerator TeleportToNextRoom()
+    {
+        Debug.Log($"Téléportation vers la prochaine salle dans {teleportDelay} secondes...");
+        yield return new WaitForSeconds(teleportDelay);
+
+        if (playerTransform != null && nextQuizRoomPosition != null)
+        {
+            playerTransform.position = nextQuizRoomPosition.position;
+            playerTransform.rotation = nextQuizRoomPosition.rotation;
+            Debug.Log("Joueur téléporté vers la prochaine salle de quiz !");
+        }
+        else
+        {
+            Debug.LogWarning("PlayerTransform ou NextQuizRoomPosition non assigné !");
+        }
+    }
+
+    System.Collections.IEnumerator TeleportToWrongAnswerRoom()
+    {
+        Debug.Log($"Téléportation vers la salle d'erreur de ce quiz dans {teleportDelay} secondes...");
+        yield return new WaitForSeconds(teleportDelay);
+
+        if (playerTransform != null && thisQuizWrongAnswerRoomPosition != null)
+        {
+            playerTransform.position = thisQuizWrongAnswerRoomPosition.position;
+            playerTransform.rotation = thisQuizWrongAnswerRoomPosition.rotation;
+            Debug.Log("Joueur téléporté vers la salle d'erreur de ce quiz !");
+        }
+        else
+        {
+            Debug.LogWarning("PlayerTransform ou ThisQuizWrongAnswerRoomPosition non assigné !");
+        }
     }
 
     void DisableButtons()
     {
-        answer1Button.interactable = false;
-        answer2Button.interactable = false;
+        if (answer1Button != null)
+            answer1Button.interactable = false;
+        if (answer2Button != null)
+            answer2Button.interactable = false;
     }
 
     public void EnableButtons()
     {
-        answer1Button.interactable = true;
-        answer2Button.interactable = true;
+        if (answer1Button != null)
+            answer1Button.interactable = true;
+        if (answer2Button != null)
+            answer2Button.interactable = true;
     }
 }
