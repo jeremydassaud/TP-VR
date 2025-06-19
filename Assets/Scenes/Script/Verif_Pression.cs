@@ -17,6 +17,6 @@ public class PressurePlateManager : MonoBehaviour
 
     void Teleporter()
     {
-        SceneManager.LoadScene("NomDeVotreScene"); // Remplacez par le nom de la scène de destination
+        SceneManager.LoadScene("EcranFin"); // Remplacez par le nom de la scène de destination
     }
 }
