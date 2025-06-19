@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class QuizManager : MonoBehaviour
@@ -16,6 +17,14 @@ public class QuizManager : MonoBehaviour
     public Transform nextQuizRoomPosition;
     public Transform thisQuizWrongAnswerRoomPosition;
     public float teleportDelay = 2f;
+
+    [Header("Scene Management")]
+    public bool isLastQuiz = false;
+    public string nextSceneName = "";
+    public float sceneChangeDelay = 3f;
+
+    [Header("Success Animation")]
+    public SuccessAnimationManager successAnimationManager;
 
     private Text questionText;
     private Text answer1Text;
@@ -119,6 +128,11 @@ public class QuizManager : MonoBehaviour
 
         if (isCorrect)
         {
+            if (successAnimationManager != null)
+            {
+                successAnimationManager.PlaySuccessAnimation();
+            }
+
             StartCoroutine(TeleportToNextRoom());
         }
         else
@@ -132,7 +146,13 @@ public class QuizManager : MonoBehaviour
         Debug.Log($"Téléportation vers la prochaine salle dans {teleportDelay} secondes...");
         yield return new WaitForSeconds(teleportDelay);
 
-        if (playerTransform != null && nextQuizRoomPosition != null)
+        if (isLastQuiz && !string.IsNullOrEmpty(nextSceneName))
+        {
+            Debug.Log($"Dernier quiz terminé ! Changement de scène vers '{nextSceneName}' dans {sceneChangeDelay} secondes...");
+            yield return new WaitForSeconds(sceneChangeDelay);
+            ChangeScene();
+        }
+        else if (playerTransform != null && nextQuizRoomPosition != null)
         {
             playerTransform.position = nextQuizRoomPosition.position;
             playerTransform.rotation = nextQuizRoomPosition.rotation;
@@ -142,6 +162,12 @@ public class QuizManager : MonoBehaviour
         {
             Debug.LogWarning("PlayerTransform ou NextQuizRoomPosition non assigné !");
         }
+    }
+
+    void ChangeScene()
+    {
+        Debug.Log($"Changement de scène vers: {nextSceneName}");
+        SceneManager.LoadScene(nextSceneName);
     }
 
     System.Collections.IEnumerator TeleportToWrongAnswerRoom()
