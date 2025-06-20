@@ -12606,6 +12606,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objet: {fileID: 1238087144}
+  AsCoffre: 1
 --- !u!65 &1238087146
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16346,6 +16347,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objet: {fileID: 1606646025}
+  AsOssement: 1
 --- !u!65 &1606646031
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17502,6 +17504,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objet: {fileID: 1734245730}
+  AsPiece: 1
 --- !u!23 &1734245733
 MeshRenderer:
   m_ObjectHideFlags: 0

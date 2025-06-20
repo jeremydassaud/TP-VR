@@ -1,43 +1,26 @@
 using UnityEngine;
-
 public class Gestion_Grille_Ossement : MonoBehaviour
 {
-    public GameObject objet; // L'objet à rendre invisible
+    public GameObject objet;
+    public string itemID = "ossement";
 
-    public void UpdateGrille(bool AsOssement)
+    void Start()
     {
-        // Vérifie la valeur de la variable
-        if (AsOssement)
-        {
-            RendreInvisible();
-        }
-        else
-        {
-            RendreVisible();
-        }
+        if(PlayerPrefs.GetInt(itemID, 0) == 1) RendreInvisible();
+        else RendreVisible();
     }
 
-    void Update()
+    void RendreInvisible()
     {
+        objet.SetActive(false);
+        Collider col = objet.GetComponent<Collider>();
+        if(col != null) col.enabled = false;
     }
 
-    public void RendreInvisible()
+    void RendreVisible()
     {
-        objet.SetActive(false); // Désactive l'objet
-        Collider collider = objet.GetComponent<Collider>();
-        if (collider != null)
-        {
-            collider.enabled = false; // Désactive le collider
-        }
-    }
-
-    public void RendreVisible()
-    {
-        objet.SetActive(true); // Active l'objet
-        Collider collider = objet.GetComponent<Collider>();
-        if (collider != null)
-        {
-            collider.enabled = true; // Active le collider
-        }
+        objet.SetActive(true);
+        Collider col = objet.GetComponent<Collider>();
+        if(col != null) col.enabled = true;
     }
 }

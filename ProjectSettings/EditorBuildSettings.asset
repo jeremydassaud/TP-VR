@@ -8,12 +8,27 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 55daccc09a3b69647bbab145b54a3ab3
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 73e550c8dc015604dab859c1ca8abed4
   - enabled: 0
     path: Assets/Scenes/End.unity
     guid: f5ad7c55d148751408af89b7c2d185ac
   - enabled: 1
     path: Assets/Scenes/EndSalle.unity
     guid: 940c432d64792034e99c996ef6ec437c
+  - enabled: 1
+    path: Assets/Scenes/Salle1.unity
+    guid: 02dd6593bf5b15244a1b1e7956f9989c
+  - enabled: 1
+    path: Assets/V1-salle2.unity
+    guid: a3ea532c351e8b74783e0eaf55b7fd1c
+  - enabled: 1
+    path: Assets/Scenes/Salle3.unity
+    guid: c052950417a89e4439b61221b1cc2761
+  - enabled: 1
+    path: Assets/Scenes/Salle4.unity
+    guid: 361108223c09f484e8321a83de3e7d7f
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260, type: 2}
     Unity.XR.OpenVR.Settings: {fileID: 11400000, guid: 8613eee418c4bce4c9e766aa3427f681, type: 2}

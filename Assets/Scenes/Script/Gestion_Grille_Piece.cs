@@ -1,43 +1,33 @@
 using UnityEngine;
-
 public class Gestion_Grille_Piece : MonoBehaviour
 {
-    public GameObject objet; // L'objet à rendre invisible
+    public GameObject objet;     // La porte ou grille à cacher
+    public string coinID = "coin1"; // Même ID que celui dans CoinCollectible
 
-    public void UpdateGrille(bool AsPiece)
+    void Start()
     {
-        // Vérifie la valeur de la variable
-        if (AsPiece)
+        if(PlayerPrefs.GetInt(coinID, 0) == 1)
         {
             RendreInvisible();
-        }
-        else
+        } else
         {
             RendreVisible();
         }
     }
 
-    void Update()
-    {
-    }
-
     public void RendreInvisible()
     {
-        objet.SetActive(false); // Désactive l'objet
+        objet.SetActive(false);
         Collider collider = objet.GetComponent<Collider>();
-        if (collider != null)
-        {
-            collider.enabled = false; // Désactive le collider
-        }
+        if(collider != null)
+            collider.enabled = false;
     }
 
     public void RendreVisible()
     {
-        objet.SetActive(true); // Active l'objet
+        objet.SetActive(true);
         Collider collider = objet.GetComponent<Collider>();
-        if (collider != null)
-        {
-            collider.enabled = true; // Active le collider
-        }
+        if(collider != null)
+            collider.enabled = true;
     }
 }

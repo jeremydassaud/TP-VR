@@ -3,23 +3,18 @@ using UnityEngine;
 public class CoinCollectible : MonoBehaviour
 {
     [Header("Configuration")]
-    public bool isCollected = false;
+    public string coinID = "coin1"; // Identifiant unique
 
-    // Fonction publique que tu peux appeler depuis l'événement Unity
     public void OnObjectGrabbed()
     {
         Debug.Log("Objet collecté via UnityEvent !");
 
-        // Passe la variable à true
-        isCollected = true;
+        PlayerPrefs.SetInt(coinID, 1); // Marque comme récupéré
+        PlayerPrefs.Save();
 
-        // Faire disparaître l'objet
-        gameObject.SetActive(false);
+        gameObject.SetActive(false); // Cache l'objet
+     }
 
-        FindFirstObjectByType<Gestion_Grille_Piece>().UpdateGrille(isCollected);
-    }
-
-    // Autres fonctions utiles que tu peux utiliser
     public void DestroyObject()
     {
         Destroy(gameObject);
@@ -27,7 +22,8 @@ public class CoinCollectible : MonoBehaviour
 
     public void SetVariableTrue()
     {
-        isCollected = true;
+        PlayerPrefs.SetInt(coinID, 1);
+        PlayerPrefs.Save();
         Debug.Log("Variable passée à true !");
     }
 
