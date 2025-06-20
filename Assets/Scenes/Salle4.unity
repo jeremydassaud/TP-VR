@@ -8585,6 +8585,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4663921206204982443, guid: f6cdc4943f2a74143a2efa8825eb57af, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6300242525686948309, guid: f6cdc4943f2a74143a2efa8825eb57af, type: 3}
       propertyPath: m_Name
       value: XR Origin (XR Rig)
