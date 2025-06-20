@@ -23,9 +23,9 @@ public class MonsterVision : MonoBehaviour
     {
         Vector3 target = new Vector3(player.position.x, transform.position.y, player.position.z);
 
-        if (CanSeePlayer())
+        if(CanSeePlayer())
         {
-            if (!isChasing)
+            if(!isChasing)
             {
                 isChasing = true;
                 patrol.enabled = false;
@@ -33,16 +33,14 @@ public class MonsterVision : MonoBehaviour
 
             lostPlayerTimer = 0f;
             agent.SetDestination(target);
-        }
-        else if (isChasing)
+        } else if(isChasing)
         {
             lostPlayerTimer += Time.deltaTime;
 
-            if (lostPlayerTimer <= 5f)
+            if(lostPlayerTimer <= 5f)
             {
                 agent.SetDestination(target);
-            }
-            else
+            } else
             {
                 isChasing = false;
                 patrol.enabled = true;
@@ -61,9 +59,9 @@ public class MonsterVision : MonoBehaviour
         Vector3 dirToPlayer = (player.position - transform.position).normalized;
         float angle = Vector3.Angle(transform.forward, dirToPlayer);
 
-        if (Vector3.Distance(transform.position, player.position) < visionRange && angle < visionAngle / 2f)
+        if(Vector3.Distance(transform.position, player.position) < visionRange && angle < visionAngle / 2f)
         {
-            if (!Physics.Raycast(transform.position + Vector3.up, dirToPlayer, Vector3.Distance(transform.position, player.position), obstacleMask))
+            if(!Physics.Raycast(transform.position + Vector3.up, dirToPlayer, Vector3.Distance(transform.position, player.position), obstacleMask))
             {
                 return true;
             }
