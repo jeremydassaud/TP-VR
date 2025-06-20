@@ -8511,13 +8511,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 438877733}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c087c90507f60b7449476aeac1bbe9cf, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b6596f1495bc2446b59a2a036da9bd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 8676487198687803218}
-  destination: {fileID: 0}
   playerg: {fileID: 8676487198687803217}
 --- !u!114 &439984918
 MonoBehaviour:
@@ -25238,7 +25237,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4663921206204982443, guid: f6cdc4943f2a74143a2efa8825eb57af, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.36
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5828356331642101844, guid: f6cdc4943f2a74143a2efa8825eb57af, type: 3}
       propertyPath: m_RequestedTrackingOriginMode
