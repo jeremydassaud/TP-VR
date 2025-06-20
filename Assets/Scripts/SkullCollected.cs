@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GrabHandler : MonoBehaviour
+public class SkullCollected : MonoBehaviour
 {
     [Header("Configuration")]
     public bool isCollected = false;
