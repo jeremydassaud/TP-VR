@@ -3,9 +3,8 @@ using UnityEngine;
 public class Gestion_Grille_Ossement : MonoBehaviour
 {
     public GameObject objet; // L'objet à rendre invisible
-    public bool AsOssement; // La variable qui détermine la visibilité
 
-    void Update()
+    public void UpdateGrille(bool AsOssement)
     {
         // Vérifie la valeur de la variable
         if (AsOssement)
@@ -18,7 +17,11 @@ public class Gestion_Grille_Ossement : MonoBehaviour
         }
     }
 
-    void RendreInvisible()
+    void Update()
+    {
+    }
+
+    public void RendreInvisible()
     {
         objet.SetActive(false); // Désactive l'objet
         Collider collider = objet.GetComponent<Collider>();
@@ -28,7 +31,7 @@ public class Gestion_Grille_Ossement : MonoBehaviour
         }
     }
 
-    void RendreVisible()
+    public void RendreVisible()
     {
         objet.SetActive(true); // Active l'objet
         Collider collider = objet.GetComponent<Collider>();
