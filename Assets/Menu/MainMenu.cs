@@ -5,6 +5,6 @@ public class MainMenuManager : MonoBehaviour
 {
    public void PlayGame()
    {
-        SceneManager.LoadSceneAsync("GameScene"); //changer le nom avant de push
+        SceneManager.LoadSceneAsync("Salle1"); //changer le nom avant de push
    }
 }
