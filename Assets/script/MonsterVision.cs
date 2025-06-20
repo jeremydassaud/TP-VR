@@ -21,6 +21,8 @@ public class MonsterVision : MonoBehaviour
 
     void Update()
     {
+        Vector3 target = new Vector3(player.position.x, transform.position.y, player.position.z);
+
         if (CanSeePlayer())
         {
             if (!isChasing)
@@ -30,7 +32,7 @@ public class MonsterVision : MonoBehaviour
             }
 
             lostPlayerTimer = 0f;
-            agent.SetDestination(player.position);
+            agent.SetDestination(target);
         }
         else if (isChasing)
         {
@@ -38,7 +40,7 @@ public class MonsterVision : MonoBehaviour
 
             if (lostPlayerTimer <= 5f)
             {
-                agent.SetDestination(player.position);
+                agent.SetDestination(target);
             }
             else
             {
