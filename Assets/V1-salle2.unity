@@ -12641,6 +12641,11 @@ PrefabInstance:
       addedObject: {fileID: 832350881}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98eb930752561eb498e64271a2127c0e, type: 3}
+--- !u!1 &441087507 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1717954561962503725, guid: 98eb930752561eb498e64271a2127c0e, type: 3}
+  m_PrefabInstance: {fileID: 441087506}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &443053909
 GameObject:
   m_ObjectHideFlags: 0
@@ -16755,13 +16760,59 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3785442912258021823, guid: 33964dc5a00bb754ea9c1a6d97c73623, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 599713636}
+    - targetCorrespondingSourceObject: {fileID: 1101882472380679634, guid: 33964dc5a00bb754ea9c1a6d97c73623, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 599713635}
   m_SourcePrefab: {fileID: 100100000, guid: 33964dc5a00bb754ea9c1a6d97c73623, type: 3}
 --- !u!4 &599713632 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 909997049465851894, guid: 33964dc5a00bb754ea9c1a6d97c73623, type: 3}
   m_PrefabInstance: {fileID: 599713631}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &599713633 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1101882472380679634, guid: 33964dc5a00bb754ea9c1a6d97c73623, type: 3}
+  m_PrefabInstance: {fileID: 599713631}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &599713634 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3785442912258021823, guid: 33964dc5a00bb754ea9c1a6d97c73623, type: 3}
+  m_PrefabInstance: {fileID: 599713631}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &599713635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599713633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b6596f1495bc2446b59a2a036da9bd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneName: Salle3
+  player: {fileID: 2126614353}
+  playerg: {fileID: 441087507}
+--- !u!114 &599713636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599713634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b6596f1495bc2446b59a2a036da9bd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneName: Salle3
+  player: {fileID: 2126614353}
+  playerg: {fileID: 441087507}
 --- !u!1001 &600931246
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -15,6 +15,8 @@ public class CoinCollectible : MonoBehaviour
 
         // Faire disparaître l'objet
         gameObject.SetActive(false);
+
+        FindFirstObjectByType<Gestion_Grille_Piece>().UpdateGrille(isCollected);
     }
 
     // Autres fonctions utiles que tu peux utiliser

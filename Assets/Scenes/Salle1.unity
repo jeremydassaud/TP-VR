@@ -8516,6 +8516,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b6596f1495bc2446b59a2a036da9bd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SceneName: V1-salle2
   player: {fileID: 8676487198687803218}
   playerg: {fileID: 8676487198687803217}
 --- !u!114 &439984918

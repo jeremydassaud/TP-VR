@@ -15,6 +15,8 @@ public class SkullCollected : MonoBehaviour
 
         // Faire disparaître l'objet
         gameObject.SetActive(false);
+
+        FindFirstObjectByType<Gestion_Grille_Ossement>().UpdateGrille(isCollected);
     }
 
     // Autres fonctions utiles que tu peux utiliser

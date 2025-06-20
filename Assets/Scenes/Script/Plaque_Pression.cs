@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PressurePlate : MonoBehaviour
+public class Plaque_Pression : MonoBehaviour
 {
     public float descentAmount = 0.1f; // Montée de la plaque
     public float descentSpeed = 2f; // Vitesse de descente

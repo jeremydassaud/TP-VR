@@ -15,6 +15,8 @@ public class GrabHandler : MonoBehaviour
 
         // Faire disparaître l'objet
         gameObject.SetActive(false);
+
+        FindFirstObjectByType<Gestion_Grille_Coffre>().UpdateGrille(isCollected);
     }
 
     // Autres fonctions utiles que tu peux utiliser

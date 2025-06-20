@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
+    public string SceneName;
     public Transform player;
     public GameObject playerg;
 
@@ -10,7 +11,7 @@ public class ChangeScene : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            SceneManager.LoadScene("Salle2");
+            SceneManager.LoadScene(SceneName);
         }
     }
 }
